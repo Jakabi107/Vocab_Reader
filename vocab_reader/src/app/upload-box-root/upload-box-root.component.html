@@ -1,2 +1,2 @@
-<app-upload-box></app-upload-box>
-<app-add-field-button></app-add-field-button>
+<app-upload-box *ngFor="let i of fieldsArray; index as ind" [index]="ind" class="uploadBox" (imgData)="addImageToManager($event.data, $event.index)"></app-upload-box>
+<app-add-field-button (buttonClicked)=" modifyUploadBoxCount($event)"></app-add-field-button>

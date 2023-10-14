@@ -9,5 +9,19 @@ export class UploadBoxComponent {
   @Input({alias:"field_name"}) name:string = ""
   @Input({alias: "index"}) index:number = -1;
 
-  @Output() imgData = new EventEmitter<any>();
+  @Output() imgData = new EventEmitter<imageDataInt>();
+
+  public sendData(e:any){
+    this.imgData.emit(
+      {
+        data: e.target.files[0],
+        index: this.index
+      })
+  }
+
+}
+
+interface imageDataInt{
+  data:File;
+  index:number;
 }
