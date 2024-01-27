@@ -1,1 +1,3 @@
-<p>manual-review-field works!</p>
+{{field_name}}
+<textarea #textAreaElement class="numbered-area"
+            (change)="updateFieldContentChanged(textAreaElement.value)">{{arrayToMultilineString(field_content)}}</textarea>

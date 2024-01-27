@@ -19,4 +19,8 @@ export class VocabData {
     if (this._data[field] == undefined) throw Error("No field with name " + field + "in data")
     return this._data[field]
   }
+
+  public getFieldNames():string[] {
+    return Object.keys(this._data)
+  }
 }

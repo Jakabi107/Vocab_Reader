@@ -1,1 +1,1 @@
-<p>manual-review-field-container works!</p>
+<app-manual-review-field *ngFor="let i of data.getFieldNames();" [field_content]="data.getField(i)" [field_name]="i"></app-manual-review-field>

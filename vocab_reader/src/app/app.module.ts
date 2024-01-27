@@ -29,4 +29,6 @@ import { ManualReviewConatainerComponent } from './manual-review-conatainer/manu
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

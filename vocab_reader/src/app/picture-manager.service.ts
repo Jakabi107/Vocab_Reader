@@ -17,7 +17,6 @@ export class PictureManagerService {
     else return this.files[index]
   }
 
-
   public activeFieldsCount:number = 0;
 
   public getActive () : File[] {
