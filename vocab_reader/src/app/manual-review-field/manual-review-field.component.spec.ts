@@ -41,4 +41,29 @@ describe('ManualReviewFieldComponent', () => {
 
     expect(component.field_content_changed.emit).toHaveBeenCalledWith(["test", "2", "3"]);
   });
+
+  it('should reset content when Reset button is clicked', () => {
+    component.field_content = ["test", "2", "3"];
+    const textarea = fixture.nativeElement.querySelector('textarea');
+
+    fixture.detectChanges();
+    expect(textarea.value)
+      .withContext("textarea should have the value of the field_content")
+      .toEqual("test\n2\n3");
+
+    textarea.value = "test\n2\n3\n4";
+    textarea.dispatchEvent(new Event('change'));
+    fixture.detectChanges();
+
+    expect(textarea.value)
+      .withContext("textarea should have the new value")
+      .toEqual("test\n2\n3\n4");
+
+    const reset_button = fixture.nativeElement.querySelector('button');
+    reset_button.click();
+
+    fixture.detectChanges();
+
+    expect(textarea.value).toEqual("test\n2\n3");
+  });
 });

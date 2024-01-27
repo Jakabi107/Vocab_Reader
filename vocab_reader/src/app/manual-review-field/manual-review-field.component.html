@@ -1,3 +1,5 @@
 {{field_name}}
 <textarea #textAreaElement class="numbered-area"
             (change)="updateFieldContentChanged(textAreaElement.value)">{{arrayToMultilineString(field_content)}}</textarea>
+
+<button (click)="resetFieldContent()">Reset</button>

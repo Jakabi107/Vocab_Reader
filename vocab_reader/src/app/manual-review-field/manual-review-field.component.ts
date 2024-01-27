@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-manual-review-field',
@@ -30,10 +30,16 @@ export class ManualReviewFieldComponent {
   @Input() field_content: string[] = [];
   @Output() field_content_changed = new EventEmitter<string[]>();
 
+  @ViewChild('textAreaElement') textarea: ElementRef | undefined;
   public arrayToMultilineString = (array: string[]):string => {return array.join('\n')};
 
   public updateFieldContentChanged (value:string) {
     this.field_content_changed.emit(value.split('\n'));
+  }
+
+  public resetFieldContent() {
+    if (this.textarea == undefined) return;
+    this.textarea.nativeElement.value = this.arrayToMultilineString(this.field_content);
   }
 
 }
