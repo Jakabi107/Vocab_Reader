@@ -1,23 +1,24 @@
-div.numbered-area-container{
-  height: 300px;
-  width: 100px;
-  display: inline-flex;
-  gap: 10px;
-  background-image: linear-gradient(#F1F1F1 50%, #F9F9F9 50%);
-  background-size: 100% 42px;
+span{
+  display: block;
+  margin-bottom: 10px;
 }
 
-textarea.numbered-area{
-  height: 100%;
+button {
+  margin-top: 10px;
+  display: block;
+}
+
+
+textarea {
+  display: block;
   width: 100%;
+  height: 100px;
   resize: none;
   border: none;
   outline: none;
-  overflow-y: hidden;
-  line-height: 21px;
+  background-image: linear-gradient(#F1F1F1 50%, #F9F9F9 50%);
+  background-size: 100% 2rem;
 }
-
-div.line-numbers{
-  width: 20px;
-  text-align: right;
+textarea::-webkit-scrollbar {
+  display: none;
 }

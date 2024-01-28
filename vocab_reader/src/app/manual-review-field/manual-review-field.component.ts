@@ -26,20 +26,24 @@ export class ManualReviewFieldComponent {
 
     }
 */
-  @Input() field_name: string = '';
-  @Input() field_content: string[] = [];
-  @Output() field_content_changed = new EventEmitter<string[]>();
+  @Input() fieldName: string = '';
+  @Input() fieldContent: string[] = [];
+  @Input() fieldScrollPos: number = 0;
+  @Output() fieldContentChanged = new EventEmitter<string[]>();
+  @Output() fieldScroll = new EventEmitter<number>();
 
   @ViewChild('textAreaElement') textarea: ElementRef | undefined;
   public arrayToMultilineString = (array: string[]):string => {return array.join('\n')};
 
   public updateFieldContentChanged (value:string) {
-    this.field_content_changed.emit(value.split('\n'));
+    this.fieldContentChanged.emit(value.split('\n'));
   }
 
   public resetFieldContent() {
     if (this.textarea == undefined) return;
-    this.textarea.nativeElement.value = this.arrayToMultilineString(this.field_content);
+    let old_val = this.arrayToMultilineString(this.fieldContent);
+    this.textarea.nativeElement.value = old_val;
+    this.updateFieldContentChanged(old_val);
   }
 
 }

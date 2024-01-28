@@ -1,5 +1,12 @@
-{{field_name}}
-<textarea #textAreaElement class="numbered-area"
-            (change)="updateFieldContentChanged(textAreaElement.value)">{{arrayToMultilineString(field_content)}}</textarea>
 
-<button (click)="resetFieldContent()">Reset</button>
+<div>
+  <span>{{fieldName}}</span>
+  <textarea #textAreaElement class="reviewField"
+            (change)="updateFieldContentChanged(textAreaElement.value)"
+            (scroll)="fieldScroll.emit(textAreaElement.scrollTop)"
+            [scrollTop]="this.fieldScrollPos"
+  >{{arrayToMultilineString(fieldContent)}}</textarea>
+
+  <button (click)="resetFieldContent()" class="button-1">Reset</button>
+
+</div>

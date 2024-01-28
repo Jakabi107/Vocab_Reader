@@ -13,5 +13,10 @@ export class AppComponent {
   constructor() {
     this.testData.insertField("test", ["test1", "test2", "test3"])
     this.testData.insertField("test2", ["test1", "test2", "test3"]);
+    this.testData.insertField("test3", ["test1", "test2", "test3"]);
+  }
+
+  gotDataTest(data:VocabData) {
+    console.log(data)
   }
 }

@@ -1,0 +1,13 @@
+.reviewContainer{
+  width: 100%;
+  display: inline-flex;
+  justify-content: stretch;
+  outline: #363636 solid 1px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.reviewContainer > * {
+  flex: 1;
+}

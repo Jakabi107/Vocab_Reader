@@ -8,6 +8,7 @@ import {VocabData} from "../vocab-data";
 })
 export class ManualReviewFieldContainerComponent {
 
+  public fieldScrollPos: number = 0;
   @Input() data:VocabData = new VocabData();
   @Output() reviewedData = new EventEmitter<VocabData>();
   _reviewedData:VocabData = new VocabData();
@@ -17,7 +18,7 @@ export class ManualReviewFieldContainerComponent {
   }
 
   submit() {
-    this.addFieldIfNotReviewed()
+    this.addFieldIfNotReviewed();
     this.reviewedData.emit(this._reviewedData);
   }
 

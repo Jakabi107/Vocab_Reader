@@ -20,30 +20,30 @@ describe('ManualReviewFieldComponent', () => {
   });
 
   it('should put the field_content into the textarea', () => {
-    component.field_content = ["hello", "world"];
+    component.fieldContent = ["hello", "world"];
     fixture.detectChanges();
     const textarea = fixture.nativeElement.querySelector('textarea');
     expect(textarea.value).toEqual("hello\nworld");
 
     // Second to test that it updates
-    component.field_content = ["test", "2", "3"];
+    component.fieldContent = ["test", "2", "3"];
     fixture.detectChanges();
     expect(textarea.value).toEqual("test\n2\n3");
   });
 
   it('should emit value to Output when text in textfield is changed', () => {
-    spyOn(component.field_content_changed, 'emit');
+    spyOn(component.fieldContentChanged, 'emit');
     const textarea = fixture.nativeElement.querySelector('textarea');
     textarea.value = "test\n2\n3";
     textarea.dispatchEvent(new Event('change'));
 
     fixture.detectChanges();
 
-    expect(component.field_content_changed.emit).toHaveBeenCalledWith(["test", "2", "3"]);
+    expect(component.fieldContentChanged.emit).toHaveBeenCalledWith(["test", "2", "3"]);
   });
 
   it('should reset content when Reset button is clicked', () => {
-    component.field_content = ["test", "2", "3"];
+    component.fieldContent = ["test", "2", "3"];
     const textarea = fixture.nativeElement.querySelector('textarea');
 
     fixture.detectChanges();

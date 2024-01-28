@@ -1,1 +1,12 @@
-<app-manual-review-field *ngFor="let i of data.getFieldNames();" [field_content]="data.getField(i)" [field_name]="i"></app-manual-review-field>
+<div class="reviewContainer">
+
+  <app-manual-review-field *ngFor="let i of data.getFieldNames();" [fieldContent]="data.getField(i)" [fieldName]="i"
+                           (fieldContentChanged)="fieldUpdate(i, $event)"
+                           (fieldScroll)="fieldScrollPos=$event"
+                           [fieldScrollPos]="this.fieldScrollPos"
+  >
+
+  </app-manual-review-field>
+
+</div>
+<button (click)="submit()" class="button-1">Submit</button>
