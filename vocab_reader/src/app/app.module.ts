@@ -10,6 +10,9 @@ import { ManualReviewFieldComponent } from './manual-review-field/manual-review-
 import { ManualReviewFieldContainerComponent } from './manual-review-field-container/manual-review-field-container.component';
 import { ManualReviewPreviewComponent } from './manual-review-preview/manual-review-preview.component';
 import { ManualReviewConatainerComponent } from './manual-review-conatainer/manual-review-conatainer.component';
+import { OutputContainerComponent } from './output-container/output-container.component';
+import { OutputSelectComponent } from './output-select/output-select.component';
+import { OutputDisplayComponent } from './output-display/output-display.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ManualReviewConatainerComponent } from './manual-review-conatainer/manu
     ManualReviewFieldComponent,
     ManualReviewFieldContainerComponent,
     ManualReviewPreviewComponent,
-    ManualReviewConatainerComponent
+    ManualReviewConatainerComponent,
+    OutputContainerComponent,
+    OutputSelectComponent,
+    OutputDisplayComponent
   ],
   imports: [
     BrowserModule
